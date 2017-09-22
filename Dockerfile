@@ -3,7 +3,7 @@ MAINTAINER Chee Leong <klrkdekira@gmail.com>
 
 RUN apk update && \
     apk add --no-cache \
-    ghc shadow alpine-sdk linux-headers  \
+    ghc shadow alpine-sdk linux-headers bash \
     gmp-dev zlib-dev xz ca-certificates openssl && \
     update-ca-certificates && \
     wget -qO- https://get.haskellstack.org/ | sh && \
