@@ -6,8 +6,9 @@ RUN apk update && \
     ghc shadow alpine-sdk linux-headers bash \
     gmp-dev zlib-dev xz ca-certificates openssl && \
     update-ca-certificates && \
-    wget -qO- https://get.haskellstack.org/ | sh && \
-    stack config set system-ghc --global true && \
     rm -rf /var/cache/apk/*
 
-CMD ["sh"]
+RUN wget -qO- https://get.haskellstack.org/ | sh && \
+    stack config set system-ghc --global true
+
+CMD ["bash"]
